@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import img from './images/img-svg (2).png'
+import img from './images/RTA7xXGTL.gif'
 import './App.css'
 
 function App() {
@@ -54,13 +54,13 @@ function App() {
 
     return ( 
       <div className="container"> 
-        <div className="input">
+        <div >
             <h2 className="state">Countdown Timer</h2>
-            <div>
+            <div className="input">
                 <input type="datetime-local" value={countdownTime} onChange={(e) => setCountdownTime(e.target.value)} />
-                <button onClick={handleCountdownStart} disabled={!countdownTime || isCounting}>Start Countdown</button>
-                <button onClick={handleCountdownReset} disabled={!isCounting}>Reset Countdown</button>
-        </div>
+                <button onClick={handleCountdownStart} disabled={!countdownTime || isCounting}>Start</button>
+                <button onClick={handleCountdownReset} disabled={!isCounting}>Reset</button>
+            </div>
         <div className="content">
           {isCounting ? (
             <div>
