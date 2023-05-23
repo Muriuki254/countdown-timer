@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import img from './images/img-svg (2).png'
 import './App.css'
 
 function App() {
@@ -53,28 +53,68 @@ function App() {
     const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
     return ( 
-        <div>
-            <h2>Countdown Timer</h2>
+      <div className="container"> 
+        <div className="input">
+            <h2 className="state">Countdown Timer</h2>
             <div>
                 <input type="datetime-local" value={countdownTime} onChange={(e) => setCountdownTime(e.target.value)} />
                 <button onClick={handleCountdownStart} disabled={!countdownTime || isCounting}>Start Countdown</button>
                 <button onClick={handleCountdownReset} disabled={!isCounting}>Reset Countdown</button>
         </div>
-        <div>
+        <div className="content">
           {isCounting ? (
             <div>
-              <h3>Time Remaining:</h3>
-              <p>{formatTime(days)} days, {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}</p>
+              <h3 className="state">Time Remaining:</h3>
+
+              <div className="count-down">
+                 <div className="box">
+                 <h3 id="day">{formatTime(days)} </h3>
+                     <span>days</span>
+                 </div>
+                 <div className="box">
+                 <h3 id="hour">{formatTime(hours)}</h3>
+                     <span>hours</span>
+                 </div>
+                 <div className="box">
+                     <h3 id="minute">{formatTime(minutes)}</h3>
+                     <span>minutes</span>
+                 </div>
+                 <div className="box">
+                     <h3 id="second">{formatTime(seconds)}</h3>
+                     <span>seconds</span>
+                 </div>
+             </div>
+
+
+              <p> ::</p>
             </div>
           ) : (
             <div>
-              <h3>Count Up Timer:</h3>
-              <p>{formatTime(days)} days, {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}</p>
+              <h3 className="state">Timer:</h3>
+              <div className="count-down">
+                 <div className="box">
+                 <h3 id="day">{formatTime(days)} </h3>
+                     <span>days</span>
+                 </div>
+                 <div className="box">
+                 <h3 id="hour">{formatTime(hours)}</h3>
+                     <span>hours</span>
+                 </div>
+                 <div className="box">
+                     <h3 id="minute">{formatTime(minutes)}</h3>
+                     <span>minutes</span>
+                 </div>
+                 <div className="box">
+                     <h3 id="second">{formatTime(seconds)}</h3>
+                     <span>seconds</span>
+                 </div>
+             </div>
             </div>
           )}
         </div>
       </div>
-
+      <img src={img} alt="" className="image"></img>
+      </div> 
     );
 }
 
