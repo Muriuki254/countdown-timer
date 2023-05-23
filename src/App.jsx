@@ -22,6 +22,20 @@ function App() {
       setRemainingTime(timeRemaining); // Update remainingTime with the calculated value
     }
   };
+
+  // useEffect hook to start the countdown interval when isCounting state changes
+  useEffect(() => {
+    if (isCounting) {
+      const countdownInterval = setInterval(calculateTimeRemaining, 1000); // Run calculateTimeRemaining every second
+      return () => clearInterval(countdownInterval); // Cleanup function to clear the interval when component unmounts
+    }
+  }, [isCounting]);
+
+  // Function to handle countdown start button click
+  const handleCountdownStart = () => {
+    setIsCounting(true); // Set isCounting to true, starting the countdown
+  };
+  
   
   return (
 
