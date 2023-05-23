@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 
 const CountdownTimer = () => {
   // State variables to manage countdown time, remaining time, and countdown state
