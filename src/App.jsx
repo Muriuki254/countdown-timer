@@ -52,30 +52,31 @@ function App() {
     const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-    return ( <div>
-        <h2> Countdown Timer </h2> <
-        div >
-        <
-        input type = "datetime-local"
-        value = { countdownTime }
-        onChange = {
-            (e) => setCountdownTime(e.target.value) }/> <button onClick = { handleCountdownStart }
-        disabled = {!countdownTime || isCounting } > Start Countdown </button> <
-        button onClick = { handleCountdownReset }
-        disabled = {!isCounting } > Reset Countdown </button> 
-        </div> 
-        <div> {
-            isCounting ? ( <div>
-                <h3> Time Remaining: </h3> <p> { formatTime(days) }
-                days, { formatTime(hours) }: { formatTime(minutes) }: { formatTime(seconds) } </p> </div>
-            ) : ( <div>
-                <h3> Count Up Timer: </h3> <p> { formatTime(days) }
-                days, { formatTime(hours) }: { formatTime(minutes) }: { formatTime(seconds) } </p> </div>
-            )
-        } </div> </div>
+    return ( 
+        <div>
+            <h2>Countdown Timer</h2>
+            <div>
+                <input type="datetime-local" value={countdownTime} onChange={(e) => setCountdownTime(e.target.value)} />
+                <button onClick={handleCountdownStart} disabled={!countdownTime || isCounting}>Start Countdown</button>
+                <button onClick={handleCountdownReset} disabled={!isCounting}>Reset Countdown</button>
+        </div>
+        <div>
+          {isCounting ? (
+            <div>
+              <h3>Time Remaining:</h3>
+              <p>{formatTime(days)} days, {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}</p>
+            </div>
+          ) : (
+            <div>
+              <h3>Count Up Timer:</h3>
+              <p>{formatTime(days)} days, {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}</p>
+            </div>
+          )}
+        </div>
+      </div>
 
     );
-};
+}
 
 
 export default App;
