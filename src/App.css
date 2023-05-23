@@ -1,42 +1,116 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+*,*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 7%;
+  min-height: 100vh;
+  background: rgb(235, 233, 233);
+  gap: 15px;
+  padding-bottom: 80px;
+}
+.container .content {
+  flex: 1 1 400px;
+}
+.container .state {
+  font-size: 20px;
+  color: #666;
+  padding: 5px 0;
+}
+.container .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 10px 0;
+}
+.container .input button {
+  padding: 10px ;
+  gap: 10px;
+  font-size: 10px;
+  transition: .2s ease-out ;
+  text-decoration: none;
+}
+.container .image {
+  flex: 1 1 400px;
+}
+.container .image img {
+  width: 100%;
+}
+
+.container .content .title {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: rgb(64, 64, 247);
+}
+.container .content p {
+  color: #666;
+  padding: 5px 0;
+}
+.container .content .count-down {
+  display: flex;
+  padding: 10px 0;
+  gap: 15px ;
+}
+.container .content .count-down .box {
+  flex: 1 1 20px;
+  padding: 3px;
   text-align: center;
+  border: 1px solid #3333;
+  background: #fff;
+}
+.container .content .count-down .box h3 {
+   font-size: 50px;
+   color: #333;
+}
+.container .content .count-down .box span {
+  color: rgb(64, 64, 247);
+  font-size: 20px;
+}
+.container .content .btn {
+  display: inline-block;
+  padding: 8px 50px;
+  margin: 10px 0;
+  font-size: 17px;
+  background: rgb(38, 38, 240);
+  color: #fff;
+  transition: .2s ease-out ;
+  text-decoration: none;
+}
+.container .content .btn:hover {
+  letter-spacing: 2px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:600px){
+  .container {
+      padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .container .content{
+      text-align: center;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .container .content .title{
+      font-size: 35px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .container .content p {
+      font-size: 14px;
+  }
+  .container .content .count-down {
+      gap: 5px;
+  }
+  .container .content .count-down .box h3 {
+      font-size: 30px;
+  }
+  .container .content .count-down .box span {
+      font-size: 15px;
+  }
 }
