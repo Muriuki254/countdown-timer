@@ -35,7 +35,22 @@ function App() {
   const handleCountdownStart = () => {
     setIsCounting(true); // Set isCounting to true, starting the countdown
   };
-  
+  // Function to handle countdown reset button click
+  const handleCountdownReset = () => {
+    setIsCounting(false); // Set isCounting to false, stopping the countdown
+    setRemainingTime(0); // Set remainingTime to 0
+  };
+
+  // Function to format time values with leading zeros if necessary
+  const formatTime = (time) => {
+    return time < 10 ? `0${time}` : time; // If time is less than 10, prepend a '0', otherwise return the time as is
+  };
+
+  // Calculate the days, hours, minutes, and seconds based on the remainingTime
+  const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
   
   return (
 
