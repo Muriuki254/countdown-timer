@@ -12,8 +12,8 @@ function App() {
     const calculateTimeRemaining = () => {
         const targetDate = new Date(countdownTime).getTime(); // Convert countdownTime to milliseconds
         const currentTime = new Date().getTime(); // Get the current time in milliseconds
+        // const timeRemaining = targetDate + currentTime; // Calculate the remaining time in milliseconds
         const timeRemaining = targetDate - currentTime; // Calculate the remaining time in milliseconds
-
         // Check if timeRemaining is zero or negative, indicating countdown has finished
         if (timeRemaining <= 0) {
             setIsCounting(false); // Stop the countdown
