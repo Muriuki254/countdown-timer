@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
-import img from './images/RTA7xXGTL.gif'
+// import img from './images/RTA7xXGTL.gif'
 import './App.css'
+import Lottie from 'lottie-react'
+import animationData from "./assets/137709-timer.json"
 
 function App() {
     // State variables to manage countdown time, remaining time, and countdown state
@@ -113,7 +115,8 @@ function App() {
           )}
         </div>
       </div>
-      <img src={img} alt="" className="image"></img>
+      
+      <Lottie animationData={animationData} className="image"/>
       </div> 
     );
 }
