@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   padding: 20px 7%;
   min-height: 100vh;
-  background: rgb(235, 233, 233);
+  background: radial-gradient(circle, hsl(214, 61%, 85%), hsl(238, 69%, 76%));
   gap: 15px;
   padding-bottom: 80px;
 }

@@ -41,6 +41,7 @@ function App() {
     const handleCountdownReset = () => {
         setIsCounting(false); // Set isCounting to false, stopping the countdown
         setRemainingTime(0); // Set remainingTime to 0
+        setCountdownTime(''); // Reset countdownTime to empty string
     };
 
     // Function to format time values with leading zeros if necessary
@@ -49,7 +50,7 @@ function App() {
     };
 
     // Calculate the days, hours, minutes, and seconds based on the remainingTime
-    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24)); // function is used to round down the result to the nearest integer value, as we're only interested in whole days.
     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
